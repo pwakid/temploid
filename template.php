@@ -41,8 +41,9 @@ class Template {
                 preg_match($pattern, $this->templateContent, $matches);
                 foreach ($loopData as $item) {
                     $itemContent = $matches[1];
-                    foreach ($item as $key => $value) {
-                        $itemContent = str_replace("{{$loopName.$key}}", $value, $itemContent);
+                    foreach ($item as $key => $value) { 
+                        $loopNameKey = $loopName.".".$key;
+                        $itemContent = str_replace("{{$loopNameKey}}", $value, $itemContent);
                     }
                     $loopContent .= $itemContent;
                 }
