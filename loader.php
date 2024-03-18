@@ -1,6 +1,6 @@
 <?php
 require_once("template.php");
-$config = ['root' => '/path/to/templates'];
+$config = ['root' => '/'];
 
 $template = new Template($config);
 
